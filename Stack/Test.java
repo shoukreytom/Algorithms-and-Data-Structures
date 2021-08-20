@@ -5,8 +5,8 @@ public class Test {
         for(int i = 0; i < 17; i++) {
             stack.push(i);
         }
-        // stack.pop();
-        // stack.pop();
+        stack.pop();
+        stack.pop();
         stack.print();
         System.out.println("Top element is: " + stack.peek());
         System.out.println("Stack is full? " + stack.isFull());

@@ -1,6 +1,6 @@
 public class Stack {
 
-    private int head = -1;
+    private int top = 0;
     private int capacity = 16;
     private int[] storage;
 
@@ -15,34 +15,34 @@ public class Stack {
 
     public void push(int value) {
         if(!this.isFull()) {
-            this.head++;
-            this.storage[this.head] = value;
+            this.storage[this.top] = value;
+            this.top++;
         }
     }
 
     public int pop() {
         if(!isEmpty()) {
-            int temp = storage[this.head];
-            this.head--;
+            int temp = storage[this.top-1];
+            this.top--;
             return temp;
         }
         return -1;
     }
 
     public int peek() {
-        return this.storage[this.head];
+        return this.storage[this.top-1];
     }
 
     public boolean isEmpty() {
-        return this.head < 0;
+        return this.top == 0;
     }
 
     public boolean isFull() {
-        return this.head == (this.capacity-1);
+        return this.top == this.capacity;
     }
 
     public void print() {
-        for(int i = 0; i <= this.head; i++) {
+        for(int i = 0; i < this.top; i++) {
             System.out.println(this.storage[i]);
         }
     }
