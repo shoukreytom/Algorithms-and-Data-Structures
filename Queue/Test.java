@@ -10,6 +10,19 @@ public class Test {
         queue.dequeue();
         queue.dequeue();
         queue.print();
+        System.out.println("===========================");
+        Deque deque = new Deque();
+        deque.insertFront(3);
+        deque.insertFront(5);
+        deque.insertFront(9);
+        
+        deque.insertLast(19);
+        deque.insertLast(30);
+        deque.deleteLast();     // should delete 30
+        deque.deleteFront();    // should delete 9
+        deque.print();
+        System.out.println("Element infornt of deque is: " + deque.getFront());
+        System.out.println("Element at rear of deque is: " + deque.getRear());
     }
 
 }
