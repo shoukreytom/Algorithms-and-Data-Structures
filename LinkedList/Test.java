@@ -1,7 +1,7 @@
 public class Test {
 
     public static void main(String[] args) {
-        SinglyLinkedList slist = new SinglyLinkedList();
+        /*SinglyLinkedList slist = new SinglyLinkedList();
         slist.add(4);
         slist.add(5);
         slist.add(6);
@@ -24,7 +24,15 @@ public class Test {
         System.out.println("========== Reverse print ===========");
         dlist.printReverse();
         System.out.println("Size of dlist is: " + dlist.size());
-        System.out.println("dlist is empty? " + dlist.isEmpty());
+        System.out.println("dlist is empty? " + dlist.isEmpty());*/
+        CircularLinkedList list = new CircularLinkedList();
+        list.add(8);
+        list.add(9);
+        list.add(10);
+        list.add(12);
+        list.remove();
+        list.remove();
+        list.print();
     }
 
 }
