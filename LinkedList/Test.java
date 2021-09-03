@@ -1,38 +1,62 @@
+import java.util.Random;
+
 public class Test {
 
     public static void main(String[] args) {
+        /******** Singly LinkedList: Tests Passed ********/
+        System.out.println("====== Singly LinkedList ======");
         SinglyLinkedList slist = new SinglyLinkedList();
-        slist.add(4);
-        slist.add(5);
-        slist.add(6);
-        slist.add(8);
-        System.out.println("Removed value is: " + slist.remove());
-        System.out.println("Removed value is: " + slist.remove());
-        slist.print();
-        System.out.println("Size of slist is: " + slist.size());
-        /*DoublyLinkedList dlist = new DoublyLinkedList();
+        fillList(slist, 10);
+        slist.remove();
+        slist.remove();
+        System.out.println(slist);
+        System.out.println("Size of the list is: " + slist.size());
+        System.out.println("=====================================\n");
+        /////////////////////////////////////////////////////////
+
+        /******** Doubly LinkedList: Tests Passed */
+        System.out.println("====== Doubly LinkedList =====");
+        DoublyLinkedList dlist = new DoublyLinkedList();
         dlist.insertAtHead(4);
         dlist.insertAtHead(7);
         dlist.insertAtTail(8);
         dlist.insertAtHead(5);
-        dlist.removeFromHead(7);
+        dlist.removeFromTail(7);
         dlist.removeFromHead(8);
-        dlist.removeFromHead(4);
-        dlist.removeFromHead(5);
-        // dlist.removeFromTail(5);     // Tests passed
         dlist.print();
-        System.out.println("========== Reverse print ===========");
+        System.out.println("=== Reverse print ===");
         dlist.printReverse();
         System.out.println("Size of dlist is: " + dlist.size());
         System.out.println("dlist is empty? " + dlist.isEmpty());
-        CircularLinkedList list = new CircularLinkedList();
-        list.add(8);
-        list.add(9);
-        list.add(10);
-        list.add(12);
-        list.remove();
-        list.remove();
-        list.print();*/
+        System.out.println("=====================================\n");
+        //////////////////////////////////////////////////////////
+
+        /********* Circular LinkedList: Tests Passed ********/
+        System.out.println("====== Circular LinkedList ======");
+        CircularLinkedList clist = new CircularLinkedList();
+        fillList(clist, 10);
+        clist.remove();
+        clist.remove();
+        System.out.println(clist);
+        System.out.println("Size of clist is: " + clist.size());
+        System.out.println("=====================================\n");
+        ////////////////////////////////////////////////////////
+
+        /******** Sorted LinkedList: Tests Passed ********/
+        System.out.println("====== Sorted LinkedList ======");
+        SortedLinkedList srlist = new SortedLinkedList();
+        fillList(srlist, 10);
+        srlist.remove();
+        srlist.remove();
+        System.out.println(srlist);
+        System.out.println("Size of the list is: " + srlist.size());
+        ///////////////////////////////////////////////////////////
+    }
+
+    public static void fillList(LinkedList list, int n) {
+        Random rand = new Random();
+        for(int i = 0; i < n; i++)
+            list.add(Math.abs(rand.nextInt()%10));
     }
 
 }

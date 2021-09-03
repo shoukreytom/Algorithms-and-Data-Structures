@@ -1,17 +1,17 @@
-public class CircularNode {
+public class Node {
 
-    private CircularNode next;
+    private Node next;
     private int data;
 
-    public CircularNode(int data) {
+    public Node(int data) {
         this.data = data;
     }
 
-    public void setNext(CircularNode node) {
+    public void setNext(Node node) {
         this.next = node;
     }
 
-    public CircularNode getNext() {
+    public Node getNext() {
         return this.next;
     }
 

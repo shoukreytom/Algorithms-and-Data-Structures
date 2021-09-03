@@ -1,17 +1,25 @@
-public class SinglyLinkedList extends LinkedList{
-
+public class SortedLinkedList extends LinkedList {
+    
     private Node head;
     private int length = 0;
 
     @Override
     public void add(int value) {
         Node new_node = new Node(value);
-        new_node.setNext(null);
-        if (this.head == null) {
+        if(this.head == null)
             this.head = new_node;
-        } else {
-            new_node.setNext(this.head);
-            this.head = new_node;
+        else {
+            if(this.head.getData() > value) {
+                new_node.setNext(this.head);
+                this.head = new_node;
+            }
+            else {
+                Node current = this.head;
+                while(current.getNext() != null && current.getNext().getData() < value)
+                    current = current.getNext();
+                new_node.setNext(current.getNext());
+                current.setNext(new_node);
+            }
         }
         length++;
     }
@@ -47,4 +55,5 @@ public class SinglyLinkedList extends LinkedList{
         str += "]";
         return str;
     }
+
 }
